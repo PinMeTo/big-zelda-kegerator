@@ -73,8 +73,8 @@ class WebSocketIO:
 		print status
 #		self.socketIO.emit('wiiscale-status', {'status': status})
 
-	def send_weight(self, totalWeight):
-		print totalWeight
+	def send_weight(self, keg1, keg2, keg3):
+		print keg1 %d, keg2 %d, keg3 %d % (keg1, keg2, keg3)
 #		self.socketIO.emit('wiiscale-weight', {'totalWeight': totalWeight})
 
 #	def send_connection_status(self, status):
@@ -161,7 +161,9 @@ def main(argv):
 
 		# Reset
 		done = False
-		total = []
+		keg1 = []
+		keg2 = []
+		keg3 = []
 		firstStep = True
 		skipReadings = 5
 
@@ -213,9 +215,12 @@ def main(argv):
 					# Skips the first readings when the user steps on the balance board
 					skipReadings -= 1
 					if(skipReadings < 0):
-						total.append(board.mass.topLeft)
-						socket.send_weight(board.mass.topLeft)
-						#socket.send_weight(calculate.weight(total))
+						keg1.append(board.mass.topLeft)
+						keg2.append(board.mass.topRight)
+						keg3.append(board.mass.bottomLeft)
+						
+						#socket.send_weight(board.mass.topLeft)
+						socket.send_weight(calculate.weight(keg1), calculate.weight(keg2), calculate.weight(keg3))
 
 					if board.mass.totalWeight <= sensitivity and not firstStep:
 						done = True
