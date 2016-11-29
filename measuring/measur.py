@@ -221,7 +221,7 @@ def main(argv):
 						
 						#socket.send_weight(board.mass.topLeft)
 						#socket.send_weight(calculate.weight(keg1), calculate.weight(keg2), calculate.weight(keg3))
-						socket.send_weight(keg1, keg2, keg3)
+						socket.send_weight(board.mass.topLeft, board.mass.topRight, board.mass.bottomLeft)
 
 					if board.mass.totalWeight <= sensitivity and not firstStep:
 						done = True
