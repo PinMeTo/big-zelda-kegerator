@@ -91,8 +91,8 @@ class Wiiboard:
 
 	# Connect to the Wiiboard at bluetooth address <address>
 	def connect(self, address):
-		print address
-		address = "00:23:CC:24:7A:43"
+		#print address
+		#address = "00:23:CC:24:7A:43"
 		if address == None:
 			print "Non existant address"
 			return
