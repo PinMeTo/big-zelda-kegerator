@@ -33,7 +33,7 @@ from bluetooth import *
 # Global
 board = None
 sleep = True
-sensitivity = 1 #kg
+sensitivity = 0.1 #kg
 calibrate = 0 #kg
 config_address = None
 
@@ -220,7 +220,8 @@ def main(argv):
 						keg3.append(board.mass.bottomLeft)
 						
 						#socket.send_weight(board.mass.topLeft)
-						socket.send_weight(calculate.weight(keg1), calculate.weight(keg2), calculate.weight(keg3))
+						#socket.send_weight(calculate.weight(keg1), calculate.weight(keg2), calculate.weight(keg3))
+						socket.send_weight(keg1, keg2, keg3)
 
 					if board.mass.totalWeight <= sensitivity and not firstStep:
 						done = True
