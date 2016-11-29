@@ -74,7 +74,7 @@ class WebSocketIO:
 #		self.socketIO.emit('wiiscale-status', {'status': status})
 
 	def send_weight(self, keg1, keg2, keg3):
-		print keg1 %d, keg2 %d, keg3 %d % (keg1, keg2, keg3)
+		print "keg1 %d, keg2 %d, keg3 %d" % (keg1, keg2, keg3)
 #		self.socketIO.emit('wiiscale-weight', {'totalWeight': totalWeight})
 
 #	def send_connection_status(self, status):
