@@ -216,12 +216,12 @@ def main(argv):
 					skipReadings -= 1
 					if(skipReadings < 0):
 						keg1.append(board.mass.topLeft)
-						keg2.append(board.mass.topRight)
+						keg2.append(board.mass.bottomRight)
 						keg3.append(board.mass.bottomLeft)
 						
 						#socket.send_weight(board.mass.topLeft)
 						#socket.send_weight(calculate.weight(keg1), calculate.weight(keg2), calculate.weight(keg3))
-						socket.send_weight(board.mass.topLeft, board.mass.topRight, board.mass.bottomLeft)
+						socket.send_weight(board.mass.topLeft, board.mass.bottomRight, board.mass.bottomLeft)
 
 					if board.mass.totalWeight <= sensitivity and not firstStep:
 						done = True
