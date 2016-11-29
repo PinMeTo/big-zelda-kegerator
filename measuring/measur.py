@@ -43,7 +43,7 @@ host = "localhost"
 
 class CalculateWeight:
 	def formatWeight(self, weight):
-		return round(weight, 1)
+		return round(weight, 2)
 
 	def weight(self, data):
 		i = 0
@@ -74,7 +74,7 @@ class WebSocketIO:
 #		self.socketIO.emit('wiiscale-status', {'status': status})
 
 	def send_weight(self, keg1, keg2, keg3):
-		print "keg1 %d, keg2 %d, keg3 %d" % (keg1, keg2, keg3)
+		print "keg1 %.2f, keg2 %.2f, keg3 %.2f" % (keg1, keg2, keg3)
 #		self.socketIO.emit('wiiscale-weight', {'totalWeight': totalWeight})
 
 #	def send_connection_status(self, status):
