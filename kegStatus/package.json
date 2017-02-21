@@ -1,0 +1,20 @@
+{
+  "name": "keg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "clui": "^0.3.1",
+    "colors": "^1.1.2",
+    "lokijs": "^1.4.3",
+    "pad": "^1.0.2"
+  },
+  "devDependencies": {
+    "cli-clear": "^1.0.4"
+  }
+}
