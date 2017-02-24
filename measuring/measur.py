@@ -27,7 +27,7 @@ import sys
 import getopt
 
 from bluetooth import *
-#from socketIO_client import SocketIO, LoggingNamespace
+from socketIO_client import SocketIO, LoggingNamespace
 
 
 # Global
@@ -37,7 +37,7 @@ sensitivity = 0.1 #kg
 calibrate = 0 #kg
 config_address = None
 
-port = 8080
+port = 3001
 host = "localhost"
 
 
@@ -61,21 +61,23 @@ class WebSocketIO:
 	def __init__(self):
 		global host
 		global port
-#		self.socketIO = SocketIO(host, port, LoggingNamespace)
-#		self.socketIO.on('wiiscale-connect', self.receive_connect)
-#		self.socketIO.on('wiiscale-disconnect', self.receive_disconnect)
+		self.socketIO = SocketIO(host, port, LoggingNamespace)
+		self.socketIO.on('wiiscale-connect', self.receive_connect)
+		self.socketIO.on('wiiscale-disconnect', self.receive_disconnect)
 
-#	def wait(self):
-#		print "wait"
-#		self.socketIO.wait(seconds = 1)
+	def wait(self):
+		print "wait"
+		self.socketIO.wait(seconds = 1)
 
 	def send_status(self, status):
 		print status
-#		self.socketIO.emit('wiiscale-status', {'status': status})
+		self.socketIO.emit('wiiscale-status', {'status': status})
 
 	def send_weight(self, keg1, keg2, keg3):
 		print "keg1 %.2f, keg2 %.2f, keg3 %.2f" % (keg1, keg2, keg3)
-#		self.socketIO.emit('wiiscale-weight', {'totalWeight': totalWeight})
+		self.socketIO.emit('wiiscale-weight', { 'keg1': keg1, 
+												'keg2':keg2,
+												'keg3':keg3})
 
 #	def send_connection_status(self, status):
 #		self.socketIO.emit('wiiscale-connection', {'status': status})

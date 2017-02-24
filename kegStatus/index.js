@@ -9,6 +9,8 @@ const clui = require('clui'),
 	var db = new loki('kegirator.json');
 
 	var kegsDB = db.addCollection('kegs');
+	
+	
 
 var Gauge = clui.Gauge;
 
@@ -26,12 +28,19 @@ const kegs = [
 		percent: 3,
 		current: 1,
 		max: 19
+	},
+	{
+		tap: 3,
+		name: "404",
+		percent: 3,
+		current: 1,
+		max: 19
 	}
 ];
 
 kegsDB.insert(kegs);
 
-
+var server = require('./server.js')(kegsDB);
 
 
 const printKeg = (keg) => {

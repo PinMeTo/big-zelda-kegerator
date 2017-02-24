@@ -12,7 +12,8 @@
     "clui": "^0.3.1",
     "colors": "^1.1.2",
     "lokijs": "^1.4.3",
-    "pad": "^1.0.2"
+    "pad": "^1.0.2",
+    "socket.io": "^1.7.3"
   },
   "devDependencies": {
     "cli-clear": "^1.0.4"
