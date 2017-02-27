@@ -13,28 +13,32 @@ const clui = require('clui'),
 	
 
 var Gauge = clui.Gauge;
-
+//18keg = 4,5 kg
+//19keg = 4,5 kg
 const kegs = [
 	{
 		tap: 1,
-		name: "Basha",
-		percent: 5.5,
-		current: 5,
-		max: 9
+		name: "Bashah",
+		percent: 9.7,
+		current: 0,
+		max: 19,
+		kegweight: 0
 	},
 	{
 		tap: 2,
 		name: "Empire stout",
-		percent: 3,
-		current: 1,
-		max: 19
+		percent: 8.5,
+		current: 0,
+		max: 18,
+		kegweight: 0
 	},
 	{
 		tap: 3,
 		name: "404",
-		percent: 3,
-		current: 1,
-		max: 19
+		percent: 0,
+		current: 0,
+		max: 19,
+		kegweight: 0
 	}
 ];
 
