@@ -2,7 +2,7 @@
 
 
 
-module.exports = function(db){
+module.exports = function(db, status){
 
     var tap1 =  db.findOne({ tap:1 });
     var tap2 =  db.findOne({ tap:2 });
@@ -25,7 +25,7 @@ module.exports = function(db){
             updateKegs(data);
         });
         client.on('wiiscale-status', function(data){
-           // console.log(data);
+           status.message = data.status;
         });
     });
     server.listen(3001);

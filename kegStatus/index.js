@@ -9,7 +9,7 @@ const clui = require('clui'),
 	var db = new loki('kegirator.json');
 
 	var kegsDB = db.addCollection('kegs');
-	
+	var status = {message:"starting"};
 	
 
 var Gauge = clui.Gauge;
@@ -44,7 +44,7 @@ const kegs = [
 
 kegsDB.insert(kegs);
 
-var server = require('./server.js')(kegsDB);
+var server = require('./server.js')(kegsDB, status);
 
 
 const printKeg = (keg) => {
@@ -68,6 +68,8 @@ const print = () => {
 	console.log("");	
 
 	kegs.forEach(printKeg);
+	console.log("");
+	console.log(`Status: ${status.message}`);
 	setTimeout(print, 1000);
 };
 
