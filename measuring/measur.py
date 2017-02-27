@@ -158,7 +158,8 @@ def main(argv):
 		# Waiting for disconnect/sleep command
 #		socket.wait()
 		if sleep:
-			continue
+			time.sleep(10)
+			#continue
 
 
 		# Reset
@@ -223,7 +224,7 @@ def main(argv):
 						
 						#socket.send_weight(board.mass.topLeft)
 						#socket.send_weight(calculate.weight(keg1), calculate.weight(keg2), calculate.weight(keg3))
-						socket.send_weight(board.mass.topLeft, board.mass.bottomRight, board.mass.bottomLeft)
+						socket.send_weight(board.mass.topLeft, board.mass.bottomLeft, board.mass.bottomRight)
 
 					if board.mass.totalWeight <= sensitivity and not firstStep:
 						done = True
